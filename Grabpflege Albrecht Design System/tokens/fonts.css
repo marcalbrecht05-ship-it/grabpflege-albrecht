@@ -1,0 +1,5 @@
+/* Webfonts. No original font binaries were supplied with the logo, so the closest
+   Google Fonts matches are used: Cormorant Garamond (logo wordmark serif, small caps)
+   and Montserrat (logo tagline: geometric sans, wide tracking, all caps).
+   Swap the @import for local @font-face rules if licensed originals arrive. */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap");

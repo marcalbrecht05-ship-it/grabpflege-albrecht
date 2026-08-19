@@ -1,0 +1,24 @@
+:root{
+/* --- Base: Schiefer (headstone charcoal, sampled #3d3d3c) --- */
+--schiefer-950:#1b1b1a;--schiefer-900:#232322;--schiefer-800:#2e2e2d;--schiefer-700:#3d3d3c;--schiefer-600:#4f4f4d;--schiefer-500:#6b6b67;--schiefer-400:#8a8a84;--schiefer-300:#adaca4;
+/* --- Base: Moos (foliage green, sampled #4b5b36) --- */
+--moos-900:#2b3520;--moos-800:#3a4729;--moos-700:#4b5b36;--moos-600:#5d7043;--moos-500:#748a55;--moos-400:#95a87b;--moos-300:#b7c5a3;--moos-200:#d8e0cc;--moos-100:#e9eee1;--moos-50:#f3f6ee;
+/* --- Base: Stein (warm paper + stone neutrals) --- */
+--stein-0:#fdfdfc;--stein-50:#faf8f4;--stein-100:#f4f1ea;--stein-200:#e9e5db;--stein-300:#d9d4c7;--stein-400:#bfb9a9;
+/* --- Base: Sand (warm accent, candlelight) --- */
+--sand-100:#f7f0e2;--sand-300:#e6d6b4;--sand-500:#c9a961;--sand-700:#8f7434;
+/* --- Semantic surfaces --- */
+--bg-page:var(--stein-50);--bg-surface:var(--stein-0);--bg-raised:var(--stein-0);--bg-inset:var(--stein-100);--bg-muted:var(--stein-200);
+--bg-inverse:var(--schiefer-800);--bg-accent-soft:var(--moos-50);--bg-accent:var(--moos-700);--bg-scrim:rgb(27 27 26 / .55);
+/* --- Semantic text --- */
+--text-heading:var(--schiefer-800);--text-body:var(--schiefer-700);--text-muted:var(--schiefer-500);--text-subtle:var(--schiefer-400);
+--text-accent:var(--moos-700);--text-inverse:var(--stein-0);--text-on-accent:var(--stein-0);--text-link:var(--moos-700);--text-link-hover:var(--moos-900);
+/* --- Semantic lines --- */
+--border-hairline:var(--stein-200);--border-subtle:var(--stein-300);--border-strong:var(--schiefer-300);--border-accent:var(--moos-700);--border-inverse:rgb(253 253 252 / .22);
+/* --- Interaction --- */
+--accent:var(--moos-700);--accent-hover:var(--moos-800);--accent-press:var(--moos-900);--accent-soft-hover:var(--moos-100);
+--focus-ring:var(--moos-600);--selection-bg:var(--moos-200);
+/* --- Status (kept quiet; this brand never shouts) --- */
+--success:#4b5b36;--success-bg:var(--moos-50);--info:#3f5a63;--info-bg:#eaf1f3;
+--warning:#8f7434;--warning-bg:var(--sand-100);--danger:#7d3a2f;--danger-bg:#f7ece9;
+}

@@ -1,0 +1,37 @@
+:root{
+/* Families */
+--font-display:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+--font-sans:"Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+--font-body:var(--font-sans);
+/* Weights */
+--fw-light:300; /* @kind font */
+--fw-regular:400; /* @kind font */
+--fw-medium:500; /* @kind font */
+--fw-semibold:600; /* @kind font */
+--fw-bold:700; /* @kind font */
+/* Size scale (1.25 major third, 16px base) */
+--fs-3xs:11px;--fs-2xs:12px;--fs-xs:13px;--fs-sm:15px;--fs-md:17px;--fs-lg:20px;--fs-xl:24px;--fs-2xl:30px;--fs-3xl:38px;--fs-4xl:48px;--fs-5xl:60px;--fs-6xl:76px;
+/* Line heights */
+--lh-tight:1.08; /* @kind other */
+--lh-snug:1.22; /* @kind other */
+--lh-normal:1.45; /* @kind other */
+--lh-relaxed:1.65; /* @kind other */
+--lh-loose:1.8; /* @kind other */
+/* Tracking */
+--ls-tighter:-.02em; /* @kind other */
+--ls-tight:-.01em; /* @kind other */
+--ls-normal:0; /* @kind other */
+--ls-wide:.04em; /* @kind other */
+--ls-wider:.12em; /* @kind other */
+--ls-widest:.22em; /* @kind other */
+/* Semantic roles */
+--type-display-font:var(--font-display);--type-display-size:var(--fs-5xl);--type-display-weight:var(--fw-regular);--type-display-lh:var(--lh-tight);--type-display-ls:var(--ls-tight);
+--type-h1-size:var(--fs-4xl);--type-h2-size:var(--fs-3xl);--type-h3-size:var(--fs-2xl);--type-h4-size:var(--fs-xl);
+--type-body-font:var(--font-sans);--type-body-size:var(--fs-md);--type-body-weight:var(--fw-light);--type-body-lh:var(--lh-relaxed);
+--type-body-sm-size:var(--fs-sm);
+--type-eyebrow-font:var(--font-sans);--type-eyebrow-size:var(--fs-2xs);--type-eyebrow-weight:var(--fw-medium);--type-eyebrow-ls:var(--ls-widest);--type-eyebrow-transform:uppercase;
+--type-label-size:var(--fs-xs);--type-label-weight:var(--fw-medium);--type-label-ls:var(--ls-wide);
+--type-quote-font:var(--font-display);--type-quote-size:var(--fs-2xl);--type-quote-style:italic;--type-quote-lh:var(--lh-snug);
+--measure-prose:64ch; /* @kind other */
+--measure-narrow:46ch; /* @kind other */
+}

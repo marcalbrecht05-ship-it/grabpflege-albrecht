@@ -1,0 +1,23 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Core — Buttons & actions" subtitle="Button variants and sizes, icon buttons, tags and badges" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--bg-surface);padding:20px;margin:0}.lbl{font-family:var(--font-sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-subtle);font-weight:500;margin-bottom:10px}.grp{display:flex;gap:12px;align-items:center;flex-wrap:wrap}</style></head>
+<body><div id="root"></div><script type="text/babel">
+const { Button, IconButton, Icon, Badge, Tag } = window.GrabpflegeAlbrechtDesignSystem_a7ca22;
+function Demo(){return (<div style={{display:"grid",gap:22}}>
+<div><div className="lbl">Button — variants</div><div className="grp">
+<Button variant="primary" icon={<Icon name="phone" size={15}/>}>Termin anfragen</Button>
+<Button variant="secondary">Leistungen</Button>
+<Button variant="ghost" icon={<Icon name="arrow-right" size={15}/>} iconPosition="right">Mehr erfahren</Button>
+<Button variant="primary" disabled>Gesendet</Button></div></div>
+<div><div className="lbl">Sizes</div><div className="grp">
+<Button size="sm">Klein</Button><Button size="md">Mittel</Button><Button size="lg">Groß</Button>
+<span style={{width:16}}/><IconButton name="phone" label="Anrufen"/><IconButton name="mail" label="E-Mail" variant="ghost"/></div></div>
+<div><div className="lbl">Badge &amp; Tag</div><div className="grp">
+<Badge tone="success">Bestätigt</Badge><Badge tone="warning">Fällig</Badge><Badge tone="accent">Neu</Badge>
+<span style={{width:8}}/><Tag selected icon={<Icon name="leaf" size={13}/>}>Sommer</Tag><Tag>Herbst</Tag><Tag onRemove={()=>{}}>Waldfriedhof</Tag></div></div>
+</div>);}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);</script></body></html>

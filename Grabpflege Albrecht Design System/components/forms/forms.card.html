@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" viewport="700x380" name="Forms" subtitle="Inputs, select, checkbox, radio and switch with focus and error states" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--bg-surface);padding:20px;margin:0}.lbl{font-family:var(--font-sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-subtle);font-weight:500;margin-bottom:10px}.grp{display:flex;gap:12px;align-items:center;flex-wrap:wrap}</style></head>
+<body><div id="root"></div><script type="text/babel">
+const { Input, Textarea, Select, Checkbox, Radio, Switch, Icon } = window.GrabpflegeAlbrechtDesignSystem_a7ca22;
+function Demo(){const [on,setOn]=React.useState(true);return (<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:20}}>
+<div style={{display:"grid",gap:14}}>
+<Input label="Name" placeholder="Vor- und Nachname"/>
+<Input label="Grabstelle" hint="Feld und Nummer genügen" icon={<Icon name="map-pin" size={15}/>} defaultValue="Feld B / 14"/>
+<Input label="E-Mail" error="Bitte geben Sie eine E-Mail-Adresse an." defaultValue="anna@"/>
+<Select label="Friedhof" placeholder="Bitte wählen" options={["Waldfriedhof","Hauptfriedhof","St. Marien"]}/>
+</div>
+<div style={{display:"grid",gap:14,alignContent:"start"}}>
+<Textarea label="Ihre Nachricht" rows={3} placeholder="Wie können wir helfen?"/>
+<Checkbox label="Winterabdeckung" description="Tannenreisig im November" checked/>
+<Checkbox label="Grabmalreinigung"/>
+<div style={{display:"grid",gap:10}}><Radio name="p" label="Jahrespflege" description="Vier Bepflanzungen" checked/><Radio name="p" label="Einmalige Pflege"/></div>
+<Switch label="Fotobericht per E-Mail" checked={on} onChange={setOn}/>
+</div></div>);}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);</script></body></html>

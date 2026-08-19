@@ -1,0 +1,330 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ==========================================================================
+   Grabpflege Albrecht — Design-System-Tokens
+   Quelle: "Grabpflege Albrecht Design System"/tokens/*.css
+   ========================================================================== */
+
+:root {
+  /* --- Palette: Schiefer (Grabstein-Anthrazit) --- */
+  --schiefer-950: #1b1b1a;
+  --schiefer-900: #232322;
+  --schiefer-800: #2e2e2d;
+  --schiefer-700: #3d3d3c;
+  --schiefer-600: #4f4f4d;
+  --schiefer-500: #6b6b67;
+  --schiefer-400: #8a8a84;
+  --schiefer-300: #adaca4;
+
+  /* --- Palette: Moos (Laubgrün, einziger Akzent) --- */
+  --moos-900: #2b3520;
+  --moos-800: #3a4729;
+  --moos-700: #4b5b36;
+  --moos-600: #5d7043;
+  --moos-500: #748a55;
+  --moos-400: #95a87b;
+  --moos-300: #b7c5a3;
+  --moos-200: #d8e0cc;
+  --moos-100: #e9eee1;
+  --moos-50: #f3f6ee;
+
+  /* --- Palette: Stein (warmes Papierweiß) --- */
+  --stein-0: #fdfdfc;
+  --stein-50: #faf8f4;
+  --stein-100: #f4f1ea;
+  --stein-200: #e9e5db;
+  --stein-300: #d9d4c7;
+  --stein-400: #bfb9a9;
+
+  /* --- Palette: Sand (Kerzenlicht-Akzent, sparsam) --- */
+  --sand-100: #f7f0e2;
+  --sand-300: #e6d6b4;
+  --sand-500: #c9a961;
+  --sand-700: #8f7434;
+
+  /* --- Semantische Flächen --- */
+  --bg-page: var(--stein-50);
+  --bg-surface: var(--stein-0);
+  --bg-raised: var(--stein-0);
+  --bg-inset: var(--stein-100);
+  --bg-muted: var(--stein-200);
+  --bg-inverse: var(--schiefer-800);
+  --bg-accent-soft: var(--moos-50);
+  --bg-accent: var(--moos-700);
+  --bg-scrim: rgb(27 27 26 / 0.55);
+
+  /* --- Semantischer Text --- */
+  --text-heading: var(--schiefer-800);
+  --text-body: var(--schiefer-700);
+  --text-muted: var(--schiefer-500);
+  --text-subtle: var(--schiefer-400);
+  --text-accent: var(--moos-700);
+  --text-inverse: var(--stein-0);
+  --text-on-accent: var(--stein-0);
+  --text-link: var(--moos-700);
+  --text-link-hover: var(--moos-900);
+
+  /* --- Semantische Linien --- */
+  --border-hairline: var(--stein-200);
+  --border-subtle: var(--stein-300);
+  --border-strong: var(--schiefer-300);
+  --border-accent: var(--moos-700);
+  --border-inverse: rgb(253 253 252 / 0.22);
+
+  /* --- Interaktion --- */
+  --focus-ring: var(--moos-600);
+  --selection-bg: var(--moos-200);
+
+  /* --- Status (bewusst zurückhaltend, kein Signalrot/-grün) --- */
+  --success: #4b5b36;
+  --success-bg: var(--moos-50);
+  --info: #3f5a63;
+  --info-bg: #eaf1f3;
+  --warning: #8f7434;
+  --warning-bg: var(--sand-100);
+  --danger: #7d3a2f;
+  --danger-bg: #f7ece9;
+
+  /* --- Typografie --- */
+  --font-display-fallback: "Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fs-3xs: 11px;
+  --fs-2xs: 12px;
+  --fs-xs: 13px;
+  --fs-sm: 15px;
+  --fs-md: 17px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 30px;
+  --fs-3xl: 38px;
+  --fs-4xl: 48px;
+  --fs-5xl: 60px;
+  --fs-6xl: 76px;
+  --lh-tight: 1.08;
+  --lh-snug: 1.22;
+  --lh-normal: 1.45;
+  --lh-relaxed: 1.65;
+  --lh-loose: 1.8;
+  --ls-tighter: -0.02em;
+  --ls-tight: -0.01em;
+  --ls-normal: 0;
+  --ls-wide: 0.04em;
+  --ls-wider: 0.12em;
+  --ls-widest: 0.22em;
+  --measure-prose: 64ch;
+  --measure-narrow: 46ch;
+
+  /* --- Layout --- */
+  --container-content: 1120px;
+  --gutter: var(--space-6);
+  --header-h: 84px;
+  --hairline: 1px;
+  --rule-width: 96px;
+
+  /* --- Schatten: warmes, sehr leises Licht statt Drop-Shadow --- */
+  --shadow-token-xs: 0 1px 2px rgb(35 35 34 / 0.05);
+  --shadow-token-sm: 0 1px 3px rgb(35 35 34 / 0.06), 0 1px 1px rgb(35 35 34 / 0.04);
+  --shadow-token-md: 0 4px 14px rgb(35 35 34 / 0.07), 0 1px 3px rgb(35 35 34 / 0.04);
+  --shadow-token-lg: 0 14px 40px rgb(35 35 34 / 0.10), 0 2px 6px rgb(35 35 34 / 0.04);
+  --shadow-inset-hairline: inset 0 0 0 1px var(--border-hairline);
+  --shadow-focus: 0 0 0 3px rgb(93 112 67 / 0.28);
+  --scrim-bottom: linear-gradient(to top, rgb(27 27 26 / 0.72) 0%, rgb(27 27 26 / 0.35) 42%, rgb(27 27 26 / 0) 100%);
+  --scrim-flat: rgb(27 27 26 / 0.38);
+  --blur-veil: saturate(105%) blur(14px);
+
+  /* --- Bewegung --- */
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 340ms;
+  --dur-veil: 600ms;
+  --ease-standard: cubic-bezier(0.32, 0.72, 0.32, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- shadcn-Semantik auf Markenfarben gemappt --- */
+  --background: var(--stein-50);
+  --foreground: var(--schiefer-700);
+  --card: var(--stein-0);
+  --card-foreground: var(--schiefer-700);
+  --popover: var(--stein-0);
+  --popover-foreground: var(--schiefer-700);
+  --primary: var(--moos-700);
+  --primary-foreground: var(--stein-0);
+  --secondary: var(--stein-100);
+  --secondary-foreground: var(--schiefer-800);
+  --muted: var(--stein-100);
+  --muted-foreground: var(--schiefer-500);
+  --accent: var(--moos-50);
+  --accent-foreground: var(--moos-800);
+  --destructive: #7d3a2f;
+  --border: var(--stein-200);
+  --input: var(--stein-300);
+  --ring: var(--moos-600);
+  --radius: 5px;
+}
+
+@theme inline {
+  /* Marken-Palette als Tailwind-Utilities (bg-moos-700, text-schiefer-500, …) */
+  --color-schiefer-950: var(--schiefer-950);
+  --color-schiefer-900: var(--schiefer-900);
+  --color-schiefer-800: var(--schiefer-800);
+  --color-schiefer-700: var(--schiefer-700);
+  --color-schiefer-600: var(--schiefer-600);
+  --color-schiefer-500: var(--schiefer-500);
+  --color-schiefer-400: var(--schiefer-400);
+  --color-schiefer-300: var(--schiefer-300);
+
+  --color-moos-900: var(--moos-900);
+  --color-moos-800: var(--moos-800);
+  --color-moos-700: var(--moos-700);
+  --color-moos-600: var(--moos-600);
+  --color-moos-500: var(--moos-500);
+  --color-moos-400: var(--moos-400);
+  --color-moos-300: var(--moos-300);
+  --color-moos-200: var(--moos-200);
+  --color-moos-100: var(--moos-100);
+  --color-moos-50: var(--moos-50);
+
+  --color-stein-0: var(--stein-0);
+  --color-stein-50: var(--stein-50);
+  --color-stein-100: var(--stein-100);
+  --color-stein-200: var(--stein-200);
+  --color-stein-300: var(--stein-300);
+  --color-stein-400: var(--stein-400);
+
+  --color-sand-100: var(--sand-100);
+  --color-sand-300: var(--sand-300);
+  --color-sand-500: var(--sand-500);
+  --color-sand-700: var(--sand-700);
+
+  /* Semantische Kurzform, in Komponenten häufig gebraucht */
+  --color-hairline: var(--border-hairline);
+
+  /* shadcn-Semantik */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+
+  /* Fonts: self-hosted über next/font (siehe app/layout.tsx) */
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --font-heading: var(--font-display);
+
+  /* Radii — kantig statt rund (Anti-Vibe-Coding-Regel), das Arch-Motiv ist kein Corner */
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius-2xl: 8px;
+  --radius-3xl: 8px;
+  --radius-4xl: 8px;
+  --radius-arch: 9999px 9999px 3px 3px;
+
+  /* Schatten — warmes, niedrig-opakes Licht, nach oben gedeckelt (kein shadow-2xl-Look) */
+  --shadow-2xs: var(--shadow-token-xs);
+  --shadow-xs: var(--shadow-token-xs);
+  --shadow-sm: var(--shadow-token-sm);
+  --shadow-md: var(--shadow-token-md);
+  --shadow-lg: var(--shadow-token-lg);
+  --shadow-xl: var(--shadow-token-lg);
+  --shadow-2xl: var(--shadow-token-lg);
+}
+
+/* ==========================================================================
+   Basis-Elemente
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), var(--font-display-fallback);
+    color: var(--text-heading);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-tight);
+  }
+
+  /* Fließtext-Links (Rechtstexte, FAQ, Formularhinweise): erkennbar durch
+     Farbe UND Unterstrich, nicht nur Farbe. Navigations-/Chrome-Links
+     überschreiben das gezielt mit border-none. */
+  a {
+    color: var(--text-link);
+    border-bottom: 1px solid var(--moos-300);
+    transition: color var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard);
+  }
+
+  a:hover {
+    color: var(--text-link-hover);
+    border-bottom-color: var(--moos-700);
+  }
+
+  ::selection {
+    background: var(--selection-bg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

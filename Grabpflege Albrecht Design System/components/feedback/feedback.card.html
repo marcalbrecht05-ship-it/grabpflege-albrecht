@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Feedback" subtitle="Toast tones, tooltip and the dialog frame" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--bg-surface);padding:20px;margin:0}.lbl{font-family:var(--font-sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-subtle);font-weight:500;margin-bottom:10px}.grp{display:flex;gap:12px;align-items:center;flex-wrap:wrap}</style></head>
+<body><div id="root"></div><script type="text/babel">
+const { Toast, Tooltip, IconButton, Button } = window.GrabpflegeAlbrechtDesignSystem_a7ca22;
+function Demo(){return (<div style={{display:"grid",gap:18}}>
+<div className="grp" style={{alignItems:"stretch"}}><Toast tone="success" title="Anfrage gesendet" description="Wir melden uns innerhalb von zwei Werktagen."/><Toast tone="warning" title="Rechnung offen" description="Fällig am 30. Juni."/></div>
+<div className="grp"><Tooltip label="Letzte Pflege: 12. Juni"><IconButton name="info" label="Info"/></Tooltip><span style={{fontSize:13,color:"var(--text-muted)"}}>Tooltip erscheint bei Hover</span></div>
+<div style={{background:"var(--bg-surface)",boxShadow:"var(--shadow-lg)",borderRadius:"var(--radius-md)",padding:24,maxWidth:460}}>
+<div style={{fontSize:11,letterSpacing:".22em",textTransform:"uppercase",color:"var(--text-accent)",fontWeight:500}}>Bestätigung</div>
+<div style={{fontFamily:"var(--font-display)",fontSize:28,color:"var(--text-heading)",margin:"8px 0 12px"}}>Anfrage senden?</div>
+<p style={{fontSize:14,fontWeight:300,color:"var(--text-body)",lineHeight:1.6}}>Wir antworten innerhalb von zwei Werktagen.</p>
+<div style={{display:"flex",gap:10,justifyContent:"flex-end",marginTop:22}}><Button variant="secondary" size="sm">Abbrechen</Button><Button size="sm">Senden</Button></div></div>
+</div>);}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);</script></body></html>

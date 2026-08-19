@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Core — Cards & headings" subtitle="Card variants with the section-heading pattern" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--bg-surface);padding:20px;margin:0}.lbl{font-family:var(--font-sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-subtle);font-weight:500;margin-bottom:10px}.grp{display:flex;gap:12px;align-items:center;flex-wrap:wrap}</style></head>
+<body><div id="root"></div><script type="text/babel">
+const { Card, SectionHeading, Button, Rule, Logo } = window.GrabpflegeAlbrechtDesignSystem_a7ca22;
+function Demo(){return (<div style={{display:"grid",gap:18}}>
+<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}}>
+<Card><SectionHeading eyebrow="Leistung" title="Dauergrabpflege" level={3} intro="Ganzjährige Betreuung mit vier Bepflanzungen."/></Card>
+<Card variant="accent"><SectionHeading eyebrow="Ablauf" title="In drei Schritten" level={3} intro="Besichtigung, Vorschlag, Pflege."/></Card>
+</div>
+<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}}>
+<Card variant="inset" interactive><div style={{fontFamily:"var(--font-display)",fontSize:20,color:"var(--text-heading)"}}>Grabstelle 14 / B</div><div style={{fontSize:13,color:"var(--text-muted)",marginTop:6}}>Letzte Pflege: 12. Juni</div></Card>
+<Card variant="inverse"><div style={{fontFamily:"var(--font-display)",fontSize:20,marginBottom:8}}>Andenken bewahren</div><Rule tone="subtle"/><div style={{marginTop:12}}><Button variant="inverse" size="sm">Kontakt</Button></div></Card>
+</div></div>);}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);</script></body></html>
