@@ -4,19 +4,9 @@ services:
     expose:
       - "3000"
     restart: unless-stopped
-
-  caddy:
-    build: ./caddy
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - caddy_data:/data
-      - caddy_config:/config
-    depends_on:
-      - web
-    restart: unless-stopped
-
-volumes:
-  caddy_data:
-  caddy_config:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grabpflege-albrecht.rule=Host(`grabpflege-albrecht.de`) || Host(`www.grabpflege-albrecht.de`)"
+      - "traefik.http.routers.grabpflege-albrecht.entrypoints=websecure"
+      - "traefik.http.routers.grabpflege-albrecht.tls.certresolver=letsencrypt"
+      - "traefik.http.services.grabpflege-albrecht.loadbalancer.server.port=3000"
