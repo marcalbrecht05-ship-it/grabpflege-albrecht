@@ -1,0 +1,3 @@
+grabpflege-albrecht.de, www.grabpflege-albrecht.de {
+	reverse_proxy web:3000
+}
