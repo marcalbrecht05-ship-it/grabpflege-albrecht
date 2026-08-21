@@ -52,13 +52,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     telephone: config.contact.phone,
     email: config.contact.email,
     url: config.seo.siteUrl,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: config.contact.address.street,
-      postalCode: config.contact.address.zip,
-      addressLocality: config.contact.address.city,
-      addressCountry: "DE",
-    },
+    // PLATZHALTER: keine Geschäftsadresse hinterlegt, bis das Gewerbe
+    // angemeldet ist (siehe lib/config.ts). "address" bewusst weggelassen,
+    // sobald final ergänzen.
     areaServed: config.contact.region,
   };
 

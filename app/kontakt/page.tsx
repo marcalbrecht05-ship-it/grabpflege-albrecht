@@ -60,15 +60,6 @@ export default function KontaktPage() {
               </ul>
               <p className="mt-3 text-sm font-light text-schiefer-500">{config.contact.openingHours.hinweis}</p>
             </div>
-
-            <div>
-              <h2 className="text-lg text-schiefer-800">Adresse</h2>
-              <p className="mt-4 text-sm font-light leading-relaxed text-schiefer-600">
-                {config.contact.address.street}
-                <br />
-                {config.contact.address.zip} {config.contact.address.city}
-              </p>
-            </div>
           </div>
         </div>
       </div>

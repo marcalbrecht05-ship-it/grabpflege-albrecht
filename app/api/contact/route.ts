@@ -50,11 +50,22 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Bitte versuchen Sie es erneut." }, { status: 400 });
   }
 
-  // PLATZHALTER: kontaktBackend steht aktuell auf "frontend" (siehe lib/config.ts).
-  // Es ist noch kein Versandweg (E-Mail/Webhook) angebunden. Bis dahin wird die
-  // Anfrage nur serverseitig geloggt. Sobald ein Backend gewählt ist, hier den
-  // Versand ergänzen (z.B. Resend-API-Call oder Webhook-POST).
-  console.log("Neue Kontaktanfrage:", data);
+  const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
+  if (!webhookUrl) {
+    console.error("CONTACT_WEBHOOK_URL ist nicht gesetzt, Kontaktanfrage kann nicht zugestellt werden.");
+    return NextResponse.json({ error: "Anfrage kann derzeit nicht gesendet werden. Bitte rufen Sie uns an." }, { status: 502 });
+  }
+
+  const webhookResponse = await fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  if (!webhookResponse.ok) {
+    console.error("Kontaktanfrage-Webhook fehlgeschlagen:", webhookResponse.status);
+    return NextResponse.json({ error: "Anfrage konnte nicht gesendet werden. Bitte rufen Sie uns an." }, { status: 502 });
+  }
 
   return NextResponse.json({ ok: true });
 }

@@ -58,9 +58,6 @@ export function Footer() {
                 {config.contact.email}
               </a>
             </li>
-            <li>
-              {config.contact.address.street}, {config.contact.address.zip} {config.contact.address.city}
-            </li>
             <li>{config.contact.openingHours.werktags}</li>
             <li>{config.contact.openingHours.wochenende}</li>
           </ul>

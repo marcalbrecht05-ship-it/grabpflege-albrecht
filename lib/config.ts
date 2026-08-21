@@ -71,9 +71,11 @@ export const config: SiteConfig = {
     innungsmitglied: false,
   },
   contact: {
-    // PLATZHALTER — noch nicht final, vor Live-Gang ersetzen.
-    phone: "0371 000000",
-    email: "info@grabpflege-albrecht.de",
+    phone: "0152 32053131",
+    email: "kontakt@grabpflege-albrecht.de",
+    // PLATZHALTER — noch keine Geschäftsadresse (Gewerbe noch nicht angemeldet).
+    // Wird nur im Impressum verwendet, sobald final. Bis dahin taucht die
+    // Adresse bewusst nirgends sonst auf der Website auf.
     address: { street: "Musterstraße 1", zip: "09111", city: "Chemnitz" },
     region: "Chemnitz und Umgebung",
     serviceRadius: "20 km",
@@ -105,23 +107,14 @@ export const config: SiteConfig = {
     notdienstBanner: false,
     floatingCta: true,
     barrierefreiheitSeite: false,
-    kontaktBackend: "frontend",
+    kontaktBackend: "webhook",
   },
   navigation: [
     { label: "Start", href: "/" },
     { label: "Leistungen & Preise", href: "/leistungen" },
     { label: "Kontakt", href: "/kontakt" },
   ],
-  // PLATZHALTER — konkretes Einzugsgebiet (Friedhöfe im Raum Chemnitz) noch
-  // nicht final abgestimmt, Beispielnamen zur Orientierung.
-  serviceOrte: [
-    "Zentralfriedhof Chemnitz",
-    "Nikolaifriedhof Chemnitz",
-    "Friedhof Chemnitz-Altendorf",
-    "Friedhof Chemnitz-Einsiedel",
-    "Friedhof Adelsberg",
-    "Friedhof Grüna",
-  ],
+  serviceOrte: ["Städtischer Friedhof Chemnitz"],
   hero: {
     headline: "Die Grabstätte Ihrer Angehörigen in guten Händen",
     subline:

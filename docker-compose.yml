@@ -4,6 +4,8 @@ services:
     expose:
       - "3000"
     restart: unless-stopped
+    environment:
+      - CONTACT_WEBHOOK_URL
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.grabpflege-albrecht.rule=Host(`grabpflege-albrecht.de`) || Host(`www.grabpflege-albrecht.de`)"
