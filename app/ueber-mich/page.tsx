@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
-import { buttonVariants } from "@/components/ui/button";
 import { config } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -10,11 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: `${config.seo.siteUrl}/ueber-mich` },
 };
 
-/**
- * PLATZHALTER-SEITE: Inhaber trägt hier persönliche Angaben (Werdegang, Foto,
- * Motivation) nachträglich selbst ein. Struktur und Design stehen, Texte sind
- * bewusst als Platzhalter markiert.
- */
 export default function UeberMichPage() {
   return (
     <section aria-labelledby="ueber-mich-heading" className="bg-stein-100">
@@ -30,17 +23,16 @@ export default function UeberMichPage() {
           </div>
 
           <div className="flex flex-col gap-6">
-            <p className="text-[17px] font-light leading-relaxed text-schiefer-500">
-              An dieser Stelle folgt in Kürze mehr über {config.company.owner}: der persönliche Werdegang,
-              was {config.company.name} ausmacht und warum Ihnen die Grabstätte Ihrer Angehörigen hier
-              anvertraut ist.
+            <p className="text-[17px] font-light leading-relaxed text-schiefer-600">
+              Hallo, ich bin Marc, 21 Jahre alt und studiere derzeit in Chemnitz Lehramt für die Grundschule.
+              Neben dem Studium kümmere ich mich schon lange innerhalb meiner Familie um Gräber von
+              Angehörigen, für die Zeit oder Entfernung die eigene Pflege oft erschwert hat.
             </p>
-            <p className="text-[17px] font-light leading-relaxed text-schiefer-500">
-              Bis dahin erreichen Sie mich jederzeit direkt und persönlich.
+            <p className="text-[17px] font-light leading-relaxed text-schiefer-600">
+              Die Dankbarkeit, die mir dafür entgegengebracht wurde, hat mich motiviert und dazu inspiriert,
+              auch anderen Menschen dieses Privileg zukommen zu lassen und ihnen die Gewissheit zu geben,
+              dass sich jemand um die Grabstätte ihrer Liebsten kümmert.
             </p>
-            <Link href="/kontakt" className={buttonVariants({ variant: "default", className: "self-start" })}>
-              Kontakt aufnehmen
-            </Link>
           </div>
         </div>
       </div>
