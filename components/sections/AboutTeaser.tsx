@@ -36,13 +36,13 @@ export function AboutTeaser() {
         </RevealOnScroll>
 
         <RevealOnScroll variants={fadeRight}>
-          <div className="relative aspect-[4/3] overflow-hidden border border-hairline bg-stein-100">
+          <div className="relative aspect-[4/5] overflow-hidden border border-hairline bg-stein-100">
             <Image
               src="/images/marc-albrecht.png"
               alt={`${config.company.owner}, Inhaber von ${config.company.name}`}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover object-top"
+              className="object-cover"
             />
           </div>
         </RevealOnScroll>
