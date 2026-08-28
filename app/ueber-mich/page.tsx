@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { config } from "@/lib/config";
 
@@ -18,8 +19,15 @@ export default function UeberMichPage() {
         </h1>
 
         <div className="mt-14 grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
-          <div className="flex aspect-[4/3] items-center justify-center border border-hairline bg-stein-0">
-            <p className="px-8 text-center text-sm font-light text-schiefer-400">Porträtfoto folgt</p>
+          <div className="relative aspect-[4/3] overflow-hidden border border-hairline bg-stein-0">
+            <Image
+              src="/images/marc-albrecht.png"
+              alt={`${config.company.owner}, Inhaber von ${config.company.name}`}
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
 
           <div className="flex flex-col gap-6">

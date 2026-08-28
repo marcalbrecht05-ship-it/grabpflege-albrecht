@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { RevealOnScroll } from "@/components/shared/RevealOnScroll";
@@ -35,8 +36,14 @@ export function AboutTeaser() {
         </RevealOnScroll>
 
         <RevealOnScroll variants={fadeRight}>
-          <div className="flex aspect-[4/3] items-center justify-center border border-hairline bg-stein-100">
-            <p className="px-8 text-center text-sm font-light text-schiefer-400">Porträtfoto folgt</p>
+          <div className="relative aspect-[4/3] overflow-hidden border border-hairline bg-stein-100">
+            <Image
+              src="/images/marc-albrecht.png"
+              alt={`${config.company.owner}, Inhaber von ${config.company.name}`}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </RevealOnScroll>
       </div>
