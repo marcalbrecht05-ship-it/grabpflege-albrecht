@@ -80,7 +80,7 @@ export const config: SiteConfig = {
     region: "Chemnitz und Umgebung",
     serviceRadius: "20 km",
     openingHours: {
-      werktags: "Mo–Fr: 08:00–17:00 Uhr",
+      werktags: "Mo–Fr: 10:00–15:00 Uhr",
       wochenende: "Sa: nach Vereinbarung",
       hinweis: "Kein 24-Stunden-Notdienst. Anfragen außerhalb der Zeiten beantworten wir am nächsten Werktag.",
     },

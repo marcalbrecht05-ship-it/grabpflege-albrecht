@@ -50,6 +50,7 @@ export const regelpflegeLeistungsumfang = [
   "Entfernen von Unkraut, Laub und ähnlichen Verschmutzungen",
   "Entfernen verblühter und abgestorbener Pflanzenteile",
   "Pflege und Rückschnitt vorhandener Pflanzen",
+  "Bewässerung der vorhandenen Bepflanzung",
   "Oberflächliche Pflege und Lockerung des Bodens",
   "Säuberung der Grabkanten",
   "Herrichten des vorhandenen Grabschmucks",
